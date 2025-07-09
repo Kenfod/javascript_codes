@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Scope</title>
+</head>
+<body>
+    <h1>Variable Scope</h1>
+
+    <pre>
+      Variable scope is the context of the program in which it can be accessed. 
+      In programming, a variable is a named storage location that holds data or a value. 
+      Think of it as a container that you can use to store and manipulate information in your code. 
+      Variables allow you to work with data in a flexible way, as the values they hold can change during the execution of a program.
+
+      In JavaScript, you can declare variables using the var, let, or const keywords. Here's a brief overview of each:
+
+      Variable Declaration      Description
+
+      var                       - The oldest way to declare variables. It has function scope and is hoisted.
+
+      let                       - Introduced in ECMAScript 6 (ES6). It has block scope and is also hoisted.
+
+      const                     - Also introduced in ES6. It is used to declare constants and has block scope.
+                                  Unlike let, a const variable cannot be reassigned.
+
+      Now, let's delve into the concept of Variable Scope in JavaScript:
+
+      <b>Variable Scope</b>
+      Variable scope in JavaScript is the region of the code where a particular variable can be accessed or modified.
+
+      <b>Types of Scopes in JavaScript: </b>
+          1-Block scope
+          2-Function scope
+          3-Local scope
+          4-Global scope
+
+      <b>Block scope</b>
+      Earlier JavaScript had only Global Scope and Function Scope. 
+      <b>let</b> and <b>const</b> are the two new important keywords that were introduced by the 
+      ES6 and these two keywords provide Block Scope in JavaScript. 
+      ECMAScript (ES6) 2015 was the second major revision to JavaScript. 
+      Variables that are declared inside a { } block cannot be accessed from outside the block.
+
+      Variables declared with the <b>var</b> keyword cannot have block scope and they can be declared inside a { } block and can be accessed from outside the block.
+
+      <b>Function scope</b>
+      JavaScript has function scope and each function creates a new scope. 
+      Variables defined inside a function are not accessible from outside the function and variables declared with var, 
+      <b>let</b> and <b></b> are quite similar when declared inside a function. 
+
+      <b>Local scope</b>
+      Variables declared inside a function become local to the function. 
+      Local variables are created when a function starts and deleted when the function is executed. 
+      Local variables have Function Scope which means that they can only be accessed from within the function.
+
+      <b>Global scope</b>
+      Variables declared Globally (outside of any function) have Global Scope and Global variables can be accessed from anywhere in a program. 
+      Similar to function scope variables declared with <b>var</b>, <b></b> and <b>const</b> are quite similar when declared outside a block.
+        
+
+    </pre>
+
+    <br><br>
+
+    <p><a href="https://www.w3schools.com/js/js_scope.asp" target="_blank">W3School-JavaScript Scope</a></p>
+
+    <p><a href="https://www.w3schools.com/js/js_let.asp" target="_blank">W3School-JavaScript Let</a></p>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var" target="_blank">MDN Web Docs-Var</p>
+   
+    <p><a href="https://developer.mozilla.org/en-US/docs/Glossary/Scope" target="_blank">MDN Web Docs-Scope</a></p>
+
+    <p><a href="https://www.geeksforgeeks.org/javascript/what-is-variable-scope-in-javascript/" target="_blank">Geeks for Geeks-What is Variable Scope in JavaScript ?</b></a></p>
+
+    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-scope/" target="_blank">Geeks for Geeks-Javascript Scope</b></a></p>
+
+    <p><a href="https://www.programiz.com/javascript/variable-scope" target="_blank">Programiz - JavaScript Variable Scope</a></p>
+
+    <p><a href="https://www.freecodecamp.org/news/scope-in-javascript-global-vs-local-vs-block-scope/" target="_blank">Free Code Camp - Scope in JavaScript – Global vs Local vs Block Scope Explained</p>
+
+    <br><br>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <h1>Spread Operator</h1>
+
+    <pre>
+        The spread operator in JavaScript, denoted by three dots (...), allows an iterable (such as an array or a string) 
+        to be expanded in contexts where zero or more arguments (for function calls) or elements (for array literals) are expected. 
+        In an object literal, it enumerates the properties of an object and adds the key-value pairs to the object being created. 
+
+        <b>Key uses of the spread operator:</b>
+        1. Expanding arrays into individual elements.
+
+            const numbers = [1, 2, 3];
+            console.log(Math.max(...numbers)); // Output: 3 (expands [1, 2, 3] to 1, 2, 3)
+
+        2. Creating copies of arrays or objects: This creates a shallow copy.
+
+            const originalArray = [1, 2, 3];
+            const copiedArray = [...originalArray]; 
+            console.log(copiedArray); // copiedArray is [1, 2, 3]
+
+            const originalObject = { a: 1, b: 2 };
+            const copiedObject = { ...originalObject };
+            console.log(copiedObject); // copiedObject is { a: 1, b: 2 }
+
+        3. Concatenating or merging arrays.
+
+            const arr1 = [1, 2];
+            const arr2 = [3, 4];
+            const combinedArr = [...arr1, ...arr2];
+            console.log(combinedArr); // combinedArr is [1, 2, 3, 4]
+
+        4. Merging or extending objects: When merging objects with duplicate keys, 
+           the value from the last object spread into the new object will prevail.
+
+              const obj1 = { a: 1, b: 2 };
+              const obj2 = { b: 3, c: 4 };
+              const mergedObj = { ...obj1, ...obj2 };
+              console.log(mergedObj); // mergedObj is { a: 1, b: 3, c: 4 }
+
+        5. Passing array elements as function arguments.
+        
+            function sum(a, b, c) {
+                return a + b + c;
+            }
+            const values = [10, 20, 30];
+            console.log(sum(...values)); // Output: 60
+
+        6. Adding elements to an array.
+
+            const originalArray = [1, 2];
+            const newArray = [...originalArray, 3, 4];
+            console.log(newArray); // newArray is [1, 2, 3, 4]
+    </pre>
+
+    <br>
+
+    <p><a href="https://www.w3schools.com/react/react_es6_spread.asp" target="_blank">W3School-React ES6 Spread Operator</a></p>
+
+    <p><a href="https://www.w3schools.com/howto/howto_js_spread_operator.asp" target="_blank">W3School-How TO - The Spread Operator (...)</a></p>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank">MDN Web Docs-Spread syntax (...)</p>
+
+    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-spread-operator/" target="_blank">Geeks for Geeks-JavaScript Spread Operator</b></a></p>
+
+    <p><a href="https://eleftheriabatsou.medium.com/javascript-spread-operator-explained-with-examples-a38caf568ffd" target="_blank">Medum - JavaScript Spread Operator Explained (with Examples)</a></p>
+
+    <p><a href="https://www.programiz.com/javascript/spread-operator" target="_blank">Programiz - JavaScript Spread Operator</a></p>
+
+    <p><a href="https://www.freecodecamp.org/news/javascript-spread-and-rest-operators/" target="_blank">Free Code Camp - JavaScript Spread and Rest Operators – Explained with Code Examples</p>
+
+    <br><br>
+
+    <script src="index.js"></script>
+  </body>
+</html>
