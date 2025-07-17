@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Expression</title>
+</head>
+<body>
+    <h1>Function Expression</h1>
+
+    <pre>
+       A function expression in JavaScript is a way of defining a function as part of an expression, rather than as a standalone declaration. 
+       Unlike function declarations, function expressions can be anonymous (without a name) and are often assigned to variables or passed as arguments to other functions.
+
+        <b>Key characteristics of function expressions:</b>
+        <b>1. Anonymous or Named:</b>
+        <b>a. Anonymous Function Expression:</b> 
+        The most common form, where the function keyword is followed by parentheses for parameters and curly braces for the body, without a function name. 
+        This function is typically assigned to a variable.
+
+                  const greet = function(name) {
+                    return `Hello, ${name}!`;
+                  };
+
+        <b>b. Named Function Expression:</b>
+        Less common, but allows giving a name to the function within the expression. 
+        This name is primarily useful for debugging and for recursive calls within the function itself.
+
+                          const factorial = function calculateFactorial(n) {
+                            if (n <= 1) {
+                              return 1;
+                            }
+                            return n * calculateFactorial(n - 1);
+                          };
+
+        <b>2. Not Hoisted:</b>
+        Unlike function declarations, function expressions are not "hoisted" to the top of their scope. 
+        This means they can only be called or invoked after they have been defined in the code. 
+        Attempting to call a function expression before its definition will result in an error.
+        
+        <b>3. Treated as Values:</b>
+        In JavaScript, functions are first-class citizens, meaning they can be treated like any other value.
+        Function expressions leverage this by allowing functions to be assigned to variables, 
+        stored in data structures, passed as arguments to other functions (callbacks), and returned from functions.
+
+        <b>Common use cases for function expressions:</b>
+        <b>1. Callbacks:</b>
+        Passing a function as an argument to another function to be executed later 
+        (e.g., in setTimeout, event listeners, array methods like map, filter, reduce).
+
+        <b>2. Closures:</b>
+        Creating functions that "remember" the environment in which they were created, 
+        even after that environment has ceased to exist.
+
+        <b>3. Immediately Invoked Function Expressions (IIFEs):</b>
+        Creating a function expression and immediately executing it, 
+        often used to create a private scope and avoid polluting the global namespace.
+
+        <b>4. Dynamic Function Creation:</b>
+        Defining functions conditionally or within loops.
+    </pre>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function" target="_blank">MDN Web Docs-function expression</a></p>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function*" target="_blank">MDN Web Docs-function* expression</a></p>
+
+    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-function-expression/" target="_blank">Geeks for Geeks-JavaScript Function Expression</a></p>
+   
+    <p><a href="https://javascript.info/function-expressions" target="_blank">JavaScript.Info-Function expressions</b></a></p>
+
+    <p><a href="https://web.dev/learn/javascript/functions/function-expressions" target="_blank">Web.Dev - Function expressions</a></p>
+
+    <p><a href="https://www.tutorialspoint.com/javascript/javascript_function_expressions.htm" target="_blank">TutorialsPoint - JavaScript - Function Expressions</a></p>
+
+    <p><a href="https://www.freecodecamp.org/news/function-declaration-vs-function-expression/" target="_blank">Free Code Camp - Function Declaration vs Function Expression</p>
+    
+    <br><br>
+
+    <script src="index.js"></script>
+  </body>
+</html>

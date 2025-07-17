@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <h1>Arrow Functions</h1>
+
+    <pre>
+       Arrow functions, introduced in ES6 (ECMAScript 2015), 
+       provide a concise syntax for writing function expressions in JavaScript. 
+       They offer a shorter alternative to traditional function expressions 
+       and have distinct characteristics, particularly regarding the "this" keyword.
+
+        Syntax:
+        The basic syntax of an arrow function is:
+
+        (parameters) => expression
+
+        or for a multi-line function body:
+
+          (parameters) => {
+            // function body
+            return value;
+          }
+
+        <b>Key Features:</b>
+        <b>Concise Syntax:</b> Arrow functions allow for a more compact way to write functions, 
+        especially for single-expression functions where the "return" keyword and 
+        curly braces can be omitted for an implicit return.
+
+              // Traditional function expression
+              const sum = function(a, b) {
+                return a + b;
+              };
+
+              // Arrow function with implicit return
+              const sumArrow = (a, b) => a + b;
+
+        <b>Lexical "this" Binding:</b> Unlike regular functions, arrow functions do not have their own "this" binding.
+        Instead, they inherit "this" from the surrounding (lexical) scope at the time they are defined. 
+        This simplifies handling "this" in callbacks and nested functions.
+
+              function Counter() {
+                this.count = 0;
+                setInterval(() => {
+                  this.count++; // 'this' correctly refers to the Counter instance
+                  console.log(this.count);
+                }, 1000);
+              }
+        
+        <b>No "arguments" Object:</b>
+        Arrow functions do not have their own arguments object. 
+        If you need to access arguments, you can use rest parameters (...args).
+
+        <b>Not Suitable for Constructors or Methods with this:</b>
+        Due to their lexical this binding, arrow functions should not be used 
+        as constructor functions or as methods where this needs to refer to the object instance.
+
+        <b>Use Cases:</b>
+        Arrow functions are commonly used in scenarios where conciseness and 
+        lexical this binding are beneficial, such as:
+        - Callback functions in array methods (map, filter, reduce).
+        - Event handlers.
+        - Promises and asynchronous operations.      
+
+    </pre>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">MDN Web Docs-Arrow function expressions</a></p>
+
+    <p><a href="https://www.geeksforgeeks.org/javascript/arrow-functions-in-javascript/" target="_blank">Geeks for Geeks-Arrow functions in JavaScript</a></p>
+   
+    <p><a href="https://www.w3schools.com/js/js_arrow_function.asp" target="_blank">W3Schools-JavaScript Arrow Function</b></a></p>
+
+    <p><a href="https://www.programiz.com/javascript/arrow-function" target="_blank">Programiz - JavaScript Arrow Function</a></p>
+
+    <p><a href="https://javascript.info/arrow-functions-basics" target="_blank">Javascript.Info - Arrow functions, the basics</a></p>
+
+    <p><a href="https://www.freecodecamp.org/news/javascript-arrow-functions-in-depth/" target="_blank">Free Code Camp - How to Use JavaScript Arrow Functions – Explained in Detail</p>
+      
+    <p><a href="https://www.freecodecamp.org/news/the-difference-between-arrow-functions-and-normal-functions/" target="_blank">Free Code Camp-Arrow Functions vs Regular Functions in JavaScript – What's the Difference?</a></p>
+
+    <br><br>
+
+    <script src="index.js"></script>
+  </body>
+</html>
