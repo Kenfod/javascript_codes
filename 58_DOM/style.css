@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+    font-family: monospace;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(170, 75%, 60%);
+}
