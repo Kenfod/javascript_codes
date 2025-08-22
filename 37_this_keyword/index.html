@@ -9,24 +9,87 @@
     <h1>This Keyword</h1>
 
     <pre>
-       
+      The this keyword in JavaScript refers to the context in which a function is executed. 
+      Its value is determined dynamically by how the function is called, rather than where it is defined. 
+      This behavior contrasts with many other object-oriented languages where this typically refers to the current instance of a class.
+      
+      Here are the primary contexts that determine the value of this: 
+      
+      <b>Global Context:</b>
+      When this is used outside of any function or object, it refers to the global object. 
+      In a web browser, this is typically the window object; in Node.js, it's the global object.
+      
+      <b>Method Invocation:</b>
+      When a function is called as a method of an object, this refers to the object itself.
+
+                const person = {
+                  name: "Alice",
+                  greet: function() {
+                    console.log(`Hello, my name is ${this.name}`);
+                  }
+                };
+                person.greet(); // 'this' refers to 'person'
+
+      <b>Function Invocation (Non-Strict Mode):</b> 
+      In non-strict mode, when a standalone function is called, this defaults to the global object.
+
+              function showThis() {
+                console.log(this);
+              }
+              showThis(); // 'this' refers to the global object (e.g., window)
+
+      <b>Function Invocation (Strict Mode):</b> 
+      In strict mode, when a standalone function is called, this is undefined.
+
+              "use strict";
+              function showThisStrict() {
+                console.log(this);
+              }
+              showThisStrict(); // 'this' is undefined 
+
+      <b>Constructor Invocation:</b> 
+      When a function is called with the new keyword (as a constructor), this refers to the newly created instance of the object.
+
+              function Car(make, model) {
+                this.make = make;
+                this.model = model;
+              }
+              const myCar = new Car("Toyota", "Camry"); // 'this' refers to 'myCar'
+
+      <b>Explicit Binding (call(), apply(), bind()):</b> 
+      The call(), apply(), and bind() methods allow you to explicitly set the value of this for a function.
+
+              const anotherPerson = { name: "Bob" };
+              person.greet.call(anotherPerson); // 'this' refers to 'anotherPerson'
+
+      <b>Arrow Functions:</b> 
+      Arrow functions handle this lexically, meaning this is determined by the surrounding scope at the time the arrow function is defined, not when it's called.
+      This behavior makes them particularly useful for preserving the this context in callbacks and nested functions.
+
+              const obj = {
+                value: 10,
+                getValue: function() {
+                  setTimeout(() => {
+                    console.log(this.value); // 'this' refers to 'obj' due to lexical scoping
+                  }, 100);
+                }
+              };
+              obj.getValue();  
     </pre>
 
-    <br><br>
+    <br>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank">MDN Web Docs-Rest parameters</a></p>
+    <p><a href="https://www.w3schools.com/js/js_this.asp" target="_blank">W3School-this in JavaScript Objects</a></p>
 
-    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-rest-operator/" target="_blank">Geeks for Geeks-JavaScript Rest parameter</a></p>
-   
-    <p><a href="https://www.geeksforgeeks.org/javascript/what-is-the-rest-parameter-and-spread-operator-in-javascript/" target="_blank">Geeks for Geeks-Rest Parameter And Spread Operator in JavaScript</b></a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank">MDN Web Docs- this</a></p>
 
-    <p><a href="https://www.telerik.com/blogs/rest-spread-operators-explained-javascript" target="_blank">Telerik.Com - Rest and Spread Operators Explained in JavaScript</a></p>
+    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-this-keyword/" target="_blank">Geeks for Geeks-JavaScript this Keyword</a></p>
 
-    <p><a href="https://www.geekster.in/articles/rest-operator-in-js/" target="_blank">Geekster - Rest Operator In JS</a></p>
+    <p><a href="https://www.freecodecamp.org/news/the-this-keyword-in-javascript/" target="_blank">Free Code Camp - How to Use the "this" Keyword in JavaScript</p>
 
-    <p><a href="https://www.freecodecamp.org/news/javascript-rest-vs-spread-operators/" target="_blank">Free Code Camp - JavaScript Rest vs Spread Operator – What’s the Difference?</p>
+    <p><a href="https://www.freecodecamp.org/news/the-javascript-this-keyword-explained-with-examples/" target="_blank">Free Code Camp - The JavaScript this Keyword Explained with Examples</p>
       
-    <p><a href="https://www.scaler.com/topics/rest-operator-in-javascript/" target="_blank">Scaler Topics-What is the Rest Operator in Javascript?</a></p>
+    <p><a href="https://web.dev/learn/javascript/functions/this" target="_blank">Web.Dev - The this keyword</a></p>
 
     <br><br>
 

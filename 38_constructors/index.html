@@ -9,24 +9,53 @@
     <h1>Constructors</h1>
 
     <pre>
-       
+      In JavaScript, a constructor is a special method within a class or a function used to create and initialize an object instance. 
+      Its primary purpose is to set up the initial state of a newly created object by assigning values to its properties.
+
+      <b>Key aspects of JavaScript constructors:</b>
+      <b>1. Class Constructors:</b>
+      - Within an ES6 class, the constructor method is a special method specifically designed for object creation and initialization.
+      - A class can only have one constructor method.
+      - It's automatically called when an object is instantiated using the new keyword.
+      - The super() keyword can be used within a class constructor to call the constructor of its parent class (superclass).
+
+                class Person {
+                  constructor(name, age) {
+                    this.name = name;
+                    this.age = age;
+                  }
+                }
+
+                const alice = new Person("Alice", 30);
+                console.log(alice.name); // Output: Alice
+
+      <b>Constructor Functions (Pre-ES6):</b>
+      - Before the introduction of ES6 classes, constructor functions were the primary way to create and initialize objects.
+      - These are regular functions that are intended to be called with the new keyword.
+      - The this keyword inside a constructor function refers to the newly created object instance.
+
+                function Car(make, model) {
+                  this.make = make;
+                  this.model = model;
+                }
+
+                const myCar = new Car("Toyota", "Camry");
+                console.log(myCar.model); // Output: Camry
+
+      In both cases, the constructor provides a structured way to define how new objects of a particular type are created and prepared for use.  
     </pre>
 
-    <br><br>
+    <p><a href="https://www.w3schools.com/js/js_object_constructors.asp" target="_blank">W3Schools-JavaScript Object Constructors</a></p>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank">MDN Web Docs-Rest parameters</a></p>
+    <p><a href="https://www.w3schools.com/jsref/jsref_constructor_class.asp" target="_blank">W3Schools-JavaScript Class Constructors</a></p>
 
-    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-rest-operator/" target="_blank">Geeks for Geeks-JavaScript Rest parameter</a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor" target="_blank">MDN Web Docs-constructor</a></p>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor" target="_blank">MDN Web Docs-Object.prototype.constructor</a></p>
    
-    <p><a href="https://www.geeksforgeeks.org/javascript/what-is-the-rest-parameter-and-spread-operator-in-javascript/" target="_blank">Geeks for Geeks-Rest Parameter And Spread Operator in JavaScript</b></a></p>
+    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-object-constructors/" target="_blank">Geeks for Geeks-JavaScript Object Constructors</b></a></p>
 
-    <p><a href="https://www.telerik.com/blogs/rest-spread-operators-explained-javascript" target="_blank">Telerik.Com - Rest and Spread Operators Explained in JavaScript</a></p>
-
-    <p><a href="https://www.geekster.in/articles/rest-operator-in-js/" target="_blank">Geekster - Rest Operator In JS</a></p>
-
-    <p><a href="https://www.freecodecamp.org/news/javascript-rest-vs-spread-operators/" target="_blank">Free Code Camp - JavaScript Rest vs Spread Operator – What’s the Difference?</p>
-      
-    <p><a href="https://www.scaler.com/topics/rest-operator-in-javascript/" target="_blank">Scaler Topics-What is the Rest Operator in Javascript?</a></p>
+    <p><a href="https://www.theodinproject.com/lessons/node-path-javascript-objects-and-object-constructors" target="_blank">The Odin Project - Objects and Object Constructors</a></p>
 
     <br><br>
 

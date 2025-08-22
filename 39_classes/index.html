@@ -9,26 +9,97 @@
     <h1>Class</h1>
 
     <pre>
-       
+       JavaScript classes, introduced in ES6 (ECMAScript 2015), 
+       provide a more structured and object-oriented way to create objects with shared properties and methods. 
+       While JavaScript is fundamentally a prototype-based language, 
+       classes offer a syntactic sugar that makes object-oriented programming patterns more intuitive and similar to other class-based languages like Java or C++. 
+
+      <b>Key aspects of JavaScript classes:</b>
+      <b>1. Syntax:</b> 
+      Classes are declared using the class keyword, followed by the class name.
+
+            class MyClass {
+              // Class members go here
+            }
+
+      <b>2. Constructor:</b> 
+      The constructor() method is a special method within a class that is automatically 
+      called when a new instance of the class is created using the new keyword. 
+      It is used to initialize the object's properties. 
+
+            class Person {
+              constructor(name, age) {
+                this.name = name;
+                this.age = age;
+              }
+            }
+
+      <b>3. Methods:</b> 
+      Methods are functions defined within a class that provide behavior for objects created from that class.
+
+            class Person {
+              constructor(name, age) {
+                this.name = name;
+                this.age = age;
+              }
+
+              greet() {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+              }
+            }
+
+      <b>4. Instance Creation:</b> 
+      New objects (instances) are created from a class using the new keyword.
+
+            const person1 = new Person("Alice", 30);
+            person1.greet(); // Output: Hello, my name is Alice and I am 30 years old.
+
+      <b>5. Inheritance:</b> 
+      Classes support inheritance using the extends keyword, allowing a child class to inherit properties and methods from a parent class. 
+      The super() method is used in the child class's constructor to call the parent's constructor.
+
+            class Student extends Person {
+              constructor(name, age, studentId) {
+                super(name, age); // Call parent constructor
+                this.studentId = studentId;
+              }
+            }
+
+      <b>6. Encapsulation (Private Elements):</b> 
+      JavaScript classes support private class fields and methods using the # prefix, 
+      which ensures that these elements cannot be accessed or modified from outside the class, promoting encapsulation.
+
+            class MyClass {
+              #privateField = "I am private";
+
+              #privateMethod() {
+                console.log("This is a private method.");
+              }
+
+              publicMethod() {
+                this.#privateMethod();
+                console.log(this.#privateField);
+              }
+            }
     </pre>
 
-    <br><br>
+    <p><a href="https://www.w3schools.com/js/js_classes.asp" target="_blank">W3Schools-JavaScript Classes</a></p>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank">MDN Web Docs-Rest parameters</a></p>
+    <p><a href="https://www.w3schools.com/js/js_class_inheritance.asp" target="_blank">W3Schools-JavaScript Class Inheritance</a></p>
 
-    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-rest-operator/" target="_blank">Geeks for Geeks-JavaScript Rest parameter</a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank">MDN Web Docs-Classes</a></p>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes" target="_blank">MDN Web Docs-Using classes</a></p>
+
+    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-classes/" target="_blank">Geeks for Geeks-JavaScript Classes</a></p>
    
-    <p><a href="https://www.geeksforgeeks.org/javascript/what-is-the-rest-parameter-and-spread-operator-in-javascript/" target="_blank">Geeks for Geeks-Rest Parameter And Spread Operator in JavaScript</b></a></p>
+    <p><a href="https://javascript.info/classes" target="_blank">Javascript.Info-Classes</b></a></p>
 
-    <p><a href="https://www.telerik.com/blogs/rest-spread-operators-explained-javascript" target="_blank">Telerik.Com - Rest and Spread Operators Explained in JavaScript</a></p>
+    <p><a href="https://www.programiz.com/javascript/classes" target="_blank">Programiz.Com - JavaScript Classes</a></p>
 
-    <p><a href="https://www.geekster.in/articles/rest-operator-in-js/" target="_blank">Geekster - Rest Operator In JS</a></p>
+    <p><a href="https://www.freecodecamp.org/news/how-to-use-classes-in-javascript-handbook/" target="_blank">Free Code Camp - How to Use Classes in JavaScript – A Handbook for Beginners</p>
 
-    <p><a href="https://www.freecodecamp.org/news/javascript-rest-vs-spread-operators/" target="_blank">Free Code Camp - JavaScript Rest vs Spread Operator – What’s the Difference?</p>
-      
-    <p><a href="https://www.scaler.com/topics/rest-operator-in-javascript/" target="_blank">Scaler Topics-What is the Rest Operator in Javascript?</a></p>
-
-    <br><br>
+    <p><a href="https://www.freecodecamp.org/news/javascript-classes-how-they-work-with-use-case/" target="_blank">Free Code Camp - JavaScript Classes – How They Work with Use Case Example</p>
 
     <script src="index.js"></script>
   </body>

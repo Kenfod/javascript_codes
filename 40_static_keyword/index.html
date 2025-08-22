@@ -9,24 +9,55 @@
     <h1>Static Keyword</h1>
 
     <pre>
-       
+       In JavaScript, the static keyword is used within a class definition to declare static methods or static fields. 
+       Static members belong to the class itself, rather than to any individual instance of that class.
+
+        <b>Key characteristics of static members:</b>
+        <b>1. Class-level scope:</b> 
+        Static methods and fields are accessed directly on the class name, not on instances created from the class.
+
+                  class MyClass {
+                    static staticField = "I am a static field";
+                    static staticMethod() {
+                      return "I am a static method";
+                    }
+                  }
+
+                  console.log(MyClass.staticField); // Output: I am a static field
+                  console.log(MyClass.staticMethod()); // Output: I am a static method
+
+                  const instance = new MyClass();
+                  console.log(instance.staticField); // Output: undefined (cannot access on instance)
+                  // instance.staticMethod(); // This would result in an error
+
+          <b>2. No instance context:</b>
+          Static methods do not have access to this in the context of an instance. 
+          They operate independently of any specific object created from the class.
+          
+          <b>3. Utility functions and shared data:</b>
+          Static methods are commonly used for utility functions that perform operations related to the class 
+          but don't require instance-specific data (e.g., a Math.random()-like function within a custom MathUtils class). 
+          Static fields are suitable for storing data that is shared across all instances or represents a fixed configuration.
+          
+          <b>4. Inheritance:</b>
+          Static properties and methods are inherited by subclasses. 
+          If a static member is not found in a subclass, 
+          the search continues up the prototype chain to the parent class
     </pre>
 
     <br><br>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank">MDN Web Docs-Rest parameters</a></p>
+    <p><a href="https://www.w3schools.com/jsref/jsref_class_static.asp" target="_blank">W3Schools-JavaScript Class static</a></p>
 
-    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-rest-operator/" target="_blank">Geeks for Geeks-JavaScript Rest parameter</a></p>
+    <p><a href="https://www.w3schools.com/js/js_class_static.asp" target="_blank">W3School-JavaScript Static Methods</a></p>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static" target="_blank">MDN Web Docs-Static</a></p>
+
+    <p><a href="https://www.geeksforgeeks.org/javascript/js-static-methods/" target="_blank">Geeks for Geeks-JavaScript Static Methods</a></p>
    
-    <p><a href="https://www.geeksforgeeks.org/javascript/what-is-the-rest-parameter-and-spread-operator-in-javascript/" target="_blank">Geeks for Geeks-Rest Parameter And Spread Operator in JavaScript</b></a></p>
-
-    <p><a href="https://www.telerik.com/blogs/rest-spread-operators-explained-javascript" target="_blank">Telerik.Com - Rest and Spread Operators Explained in JavaScript</a></p>
-
-    <p><a href="https://www.geekster.in/articles/rest-operator-in-js/" target="_blank">Geekster - Rest Operator In JS</a></p>
-
-    <p><a href="https://www.freecodecamp.org/news/javascript-rest-vs-spread-operators/" target="_blank">Free Code Camp - JavaScript Rest vs Spread Operator – What’s the Difference?</p>
+    <p><a href="https://javascript.info/static-properties-methods" target="_blank">Javascript.Info - Static properties and methods</a></p>
       
-    <p><a href="https://www.scaler.com/topics/rest-operator-in-javascript/" target="_blank">Scaler Topics-What is the Rest Operator in Javascript?</a></p>
+    <p><a href="https://www.scaler.com/topics/javascript/static-methods-in-javascript/" target="_blank">Scaler Topics-JavaScript Static Methods</a></p>
 
     <br><br>
 
