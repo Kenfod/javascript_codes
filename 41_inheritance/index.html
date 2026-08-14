@@ -9,24 +9,78 @@
     <h1>Inheritance</h1>
 
     <pre>
-       
+       JavaScript implements inheritance primarily through two mechanisms: prototypal inheritance and class-based inheritance (introduced in ES6).
+
+        <b>1. Prototypal Inheritance:</b>
+        <b>Core Concept:</b>
+        JavaScript is fundamentally a prototype-based language. 
+        This means objects inherit properties and methods directly from other objects, 
+        rather than from classes as in traditional object-oriented programming languages like Java or C++.
+        
+        <b>Prototype Chain:</b>
+        Every JavaScript object has an internal link to another object called its prototype. 
+        When you try to access a property or method on an object, JavaScript first looks for it on the object itself. 
+        If not found, it traverses up the "prototype chain" to the object's prototype, 
+        then to that prototype's prototype, and so on, until the property is found or the end of the chain (null) is reached. 
+        
+        <b>Creating Inheritance:</b>
+        You can achieve prototypal inheritance by setting the prototype of one object to another. 
+        For example, Child.prototype = Object.create(Parent.prototype); sets up the inheritance link.
+        
+        <b>2. Class-Based Inheritance (ES6 and later):</b>
+        <b>Syntactic Sugar:</b>
+        ES6 introduced the class keyword, which provides a more familiar syntax for object-oriented programming, 
+        but it's still built on top of the existing prototypal inheritance model. 
+        Classes are essentially "syntactic sugar" for constructor functions and prototypes.
+        
+        <b>extends Keyword:</b>
+        To achieve inheritance with classes, you use the extends keyword. 
+        A child class extends a parent class, inheriting its properties and methods.
+
+                  class Parent {
+                      constructor(name) {
+                          this.name = name;
+                      }
+                      greet() {
+                          console.log(`Hello, ${this.name}`);
+                      }
+                  }
+
+                  class Child extends Parent {
+                      constructor(name, age) {
+                          super(name); // Calls the parent class constructor
+                          this.age = age;
+                      }
+                      introduce() {
+                          console.log(`My name is ${this.name} and I am ${this.age} years old.`);
+                      }
+                  }
+
+                  let myChild = new Child("Alice", 10);
+                  myChild.greet(); // Inherited from Parent
+                  myChild.introduce();
+
+      <b>super Keyword:</b> The super keyword is used within a child class to refer to the parent class. 
+      <b>super():</b> Calls the parent class's constructor, crucial for initializing inherited properties.
+      <b>super.methodName():</b> Calls a method from the parent class.
+
+      In summary, JavaScript offers a flexible approach to inheritance, 
+      leveraging its unique prototypal nature while providing a more conventional class-based syntax for easier development.
     </pre>
 
-    <br><br>
+    <p><a href="https://www.w3schools.com/js/js_class_inheritance.asp" target="_blank">W3Schools-JavaScript Class Inheritance</a></p>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank">MDN Web Docs-Rest parameters</a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript" target="_blank">MDN Web Docs-Classes in JavaScript</a></p>
 
-    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-rest-operator/" target="_blank">Geeks for Geeks-JavaScript Rest parameter</a></p>
-   
-    <p><a href="https://www.geeksforgeeks.org/javascript/what-is-the-rest-parameter-and-spread-operator-in-javascript/" target="_blank">Geeks for Geeks-Rest Parameter And Spread Operator in JavaScript</b></a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain" target="_blank">MDN Web Docs-Inheritance and the prototype chain</a></p>
 
-    <p><a href="https://www.telerik.com/blogs/rest-spread-operators-explained-javascript" target="_blank">Telerik.Com - Rest and Spread Operators Explained in JavaScript</a></p>
+    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-inheritance/" target="_blank">Geeks for Geeks-JavaScript Inheritance</a></p>
 
-    <p><a href="https://www.geekster.in/articles/rest-operator-in-js/" target="_blank">Geekster - Rest Operator In JS</a></p>
+    <p><a href="https://www.programiz.com/javascript/inheritance" target="_blank">Programiz - JavaScript Class Inheritance</a></p>
 
-    <p><a href="https://www.freecodecamp.org/news/javascript-rest-vs-spread-operators/" target="_blank">Free Code Camp - JavaScript Rest vs Spread Operator – What’s the Difference?</p>
-      
-    <p><a href="https://www.scaler.com/topics/rest-operator-in-javascript/" target="_blank">Scaler Topics-What is the Rest Operator in Javascript?</a></p>
+    <p><a href="https://javascript.info/class-inheritance" target="_blank">Javascript.Info - Class inheritance</a></p>
+
+    <p><a href="https://www.tutorialspoint.com/javascript/javascript_inheritance.htm" target="_blank">Tutorials Point - JavaScript - Inheritance</p>
 
     <br><br>
 

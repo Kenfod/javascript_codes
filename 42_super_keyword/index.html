@@ -9,24 +9,69 @@
     <h1>Super Keyword</h1>
 
     <pre>
-       
+      The super keyword in JavaScript is used within classes to refer to the parent class (or superclass). 
+      It serves two primary purposes:
+
+      <b>1. Calling the parent class's constructor:</b> In a subclass, when you define a constructor method, you must call super() before using this. 
+      This ensures that the parent class's constructor is executed and its properties are properly initialized on the instance. 
+
+                class Animal {
+                  constructor(name) {
+                    this.name = name;
+                  }
+                }
+
+                class Dog extends Animal {
+                  constructor(name, breed) {
+                    super(name); // Calls the Animal constructor
+                    this.breed = breed;
+                  }
+                }
+
+                const myDog = new Dog("Buddy", "Golden Retriever");
+                console.log(myDog.name); // Output: Buddy
+                console.log(myDog.breed); // Output: Golden Retriever
+
+      <b>2. Accessing parent class methods and properties:</b> You can use super followed by a dot (.) 
+      and the method or property name to call methods or access properties defined in the parent class. 
+      This is particularly useful for method overriding, where you want to extend the parent's functionality rather than completely replace it.
+
+                    class Animal {
+                      speak() {
+                        console.log("Animal makes a sound.");
+                      }
+                    }
+
+                    class Dog extends Animal {
+                      speak() {
+                        super.speak(); // Calls the Animal's speak method
+                        console.log("Dog barks.");
+                      }
+                    }
+
+                    const myDog = new Dog();
+                    myDog.speak();
+                    // Output:
+                    // Animal makes a sound.
+                    // Dog barks.
+
+      In essence, super provides a way to interact with the parent class within the context of a subclass, 
+      facilitating inheritance and allowing for the extension and modification of parent class behavior.
     </pre>
 
     <br><br>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank">MDN Web Docs-Rest parameters</a></p>
+    <p><a href="https://www.w3schools.com/jsref/jsref_class_super.asp" target="_blank">W3Schools-JavaScript Class super</a></p>
 
-    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-rest-operator/" target="_blank">Geeks for Geeks-JavaScript Rest parameter</a></p>
-   
-    <p><a href="https://www.geeksforgeeks.org/javascript/what-is-the-rest-parameter-and-spread-operator-in-javascript/" target="_blank">Geeks for Geeks-Rest Parameter And Spread Operator in JavaScript</b></a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super" target="_blank">MDN Web Docs-super</a></p>
 
-    <p><a href="https://www.telerik.com/blogs/rest-spread-operators-explained-javascript" target="_blank">Telerik.Com - Rest and Spread Operators Explained in JavaScript</a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Bad_super_call" target="_blank">MDN Web Docs-SyntaxError: super() is only valid in derived class constructors</a></p>
 
-    <p><a href="https://www.geekster.in/articles/rest-operator-in-js/" target="_blank">Geekster - Rest Operator In JS</a></p>
+    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-super-keyword/" target="_blank">Geeks for Geeks-JavaScript Super Keyword</a></p>
 
-    <p><a href="https://www.freecodecamp.org/news/javascript-rest-vs-spread-operators/" target="_blank">Free Code Camp - JavaScript Rest vs Spread Operator – What’s the Difference?</p>
-      
-    <p><a href="https://www.scaler.com/topics/rest-operator-in-javascript/" target="_blank">Scaler Topics-What is the Rest Operator in Javascript?</a></p>
+    <p><a href="https://www.freecodecamp.org/news/javascript-class-handbook/" target="_blank">Free Code Camp - The JavaScript Class Handbook – Complete Guide to Class Fields and the Super Keyword</a></p>
+
+    <p><a href="https://www.tutorialspoint.com/super-keyword-in-javascript" target="_blank">Tutorials Point - Super keyword in JavaScript?</p>
 
     <br><br>
 
