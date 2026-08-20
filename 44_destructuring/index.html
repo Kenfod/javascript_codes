@@ -9,24 +9,102 @@
     <h1>Destructuring</h1>
 
     <pre>
+       JavaScript destructuring is a convenient syntax introduced in ES6 that allows you to unpack values from arrays or properties from objects directly into distinct variables. 
+       It eliminates repetitive code and makes your scripts significantly cleaner.
+
+       <b>Object Destructuring:</b>
+       Object destructuring matches variables by their property keys.
        
+       <b>Basic Extraction:</b>
+       Extract properties directly into variables with matching names.
+
+       const user = { name: "Alice", age: 25 };
+
+      // Unpacking properties
+      const { name, age } = user;
+
+      console.log(name); // "Alice"
+      console.log(age);  // 25
+
+      <b>Renaming Variables:</b>
+      Assign properties to variables with completely different names using a colon (:):
+
+      const { name: userName, age: userAge } = user;
+      console.log(userName); // "Alice"
+
+      <b>Default Values:</b>
+      Provide fallback values in case a property is undefined:
+
+      const { role = "guest" } = user;
+      console.log(role); // "guest"
+
+      <b>Array Destructuring:</b>
+      Array destructuring maps variables based on the index order of elements.
+      
+      <b>Basic Extraction:</b>
+
+      const colors = ["red", "green", "blue"];
+
+      // Unpacking by order
+      const [firstColor, secondColor] = colors;
+
+      console.log(firstColor);  // "red"
+      console.log(secondColor); // "green"
+
+      <b>Skipping Elements:</b>
+      Skip unwanted items by leaving blank spaces between commas:
+
+      const [primary, , tertiary] = colors;
+      console.log(tertiary); // "blue"
+
+      <b>Advanced Techniques:</b>
+      <b>The Rest Syntax (...)</b>
+      Collect the remaining unpackaged properties or array elements into a new container.
+
+      // With Objects
+      const { name, ...restOfProperties } = user; 
+
+      // With Arrays
+      const [first, ...restOfElements] = colors; 
+
+      <b>Function Parameter Destructuring:</b>
+      Unpack properties right inside a function signature to bypass manual reference points.
+
+      function greet({ name, age }) {
+        console.log(`Hello ${name}, you are ${age}.`);
+      }
+
+      greet(user); // "Hello Alice, you are 25."
+
+      <b>Nested Destructuring:</b>
+      Extract deeply embedded data structures in a single step.
+
+      const metadata = { id: 1, data: { size: 400, type: "png" } };
+
+      const { data: { size, type } } = metadata;
+      console.log(size); // 400
+
+      <b>⚠️ Critical Fail Safes:</b>
+      Destructuring null or undefined instantly throws a TypeError.
+      Always pair nested extractions with fallback values if the parent object might be missing: 
+      
+      const { data: { size } = {} } = metadata || {};.
+
     </pre>
 
     <br><br>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank">MDN Web Docs-Rest parameters</a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring" target="_blank">MDN Web Docs-Destructuring</a></p>
 
-    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-rest-operator/" target="_blank">Geeks for Geeks-JavaScript Rest parameter</a></p>
+    <p><a href="https://www.w3schools.com/js/js_destructuring.asp" target="_blank">W3Schools-JavaScript Destructuring</a></p>
    
-    <p><a href="https://www.geeksforgeeks.org/javascript/what-is-the-rest-parameter-and-spread-operator-in-javascript/" target="_blank">Geeks for Geeks-Rest Parameter And Spread Operator in JavaScript</b></a></p>
+    <p><a href="https://mimo.org/glossary/javascript/destructuring" target="_blank">Mimo-JavaScript Destructuring: Syntax, Usage, and Examples</a></p>
 
-    <p><a href="https://www.telerik.com/blogs/rest-spread-operators-explained-javascript" target="_blank">Telerik.Com - Rest and Spread Operators Explained in JavaScript</a></p>
+    <p><a href="https://flaviocopes.com/courses/javascript/destructuring/" target="_blank">Flaviocopes - Destructuring Objects and Arrays in JavaScript</a></p>
 
-    <p><a href="https://www.geekster.in/articles/rest-operator-in-js/" target="_blank">Geekster - Rest Operator In JS</a></p>
+    <p><a href="https://dev.to/dianakw8591/object-destructuring-in-javascript-482k" target="_blank">DEV Community - Object Destructuring in JavaScript</a></p>
 
-    <p><a href="https://www.freecodecamp.org/news/javascript-rest-vs-spread-operators/" target="_blank">Free Code Camp - JavaScript Rest vs Spread Operator – What’s the Difference?</p>
-      
-    <p><a href="https://www.scaler.com/topics/rest-operator-in-javascript/" target="_blank">Scaler Topics-What is the Rest Operator in Javascript?</a></p>
+    <p><a href="https://www.freecodecamp.org/news/destructuring-in-javascript/" target="_blank">Free Code Camp - How Destructuring Works in JavaScript – Explained with Code Examples</p>
 
     <br><br>
 
