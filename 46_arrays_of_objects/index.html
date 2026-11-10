@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<pre lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +8,97 @@
 <body>
     <h1>Arrays of Objects</h1>
 
-    <pre>
-       
+  <pre>
+       In JavaScript, an array of objects combines an ordered list (array) with structured key-value pairs (objects). 
+       This is the most common format for managing real-world data like user profiles, shopping carts, or product catalogs.
+
+<b>1. Creation and Syntax</b>
+
+You define an array using square brackets [] and populate it with objects wrapped in curly braces {}.
+
+const users = [
+  { id: 1, name: "Sarah", age: 22, isActive: true },
+  { id: 2, name: "James", age: 30, isActive: false },
+  { id: 3, name: "Lena", age: 27, isActive: true }
+];
+
+<b>2. Accessing and Modifying Data</b>
+
+To access a property, chain the array index number with the object's key name using dot notation.
+• Read a value: users[0].name returns "Sarah".
+• Update a value: users[1].age = 31; updates James's age.
+• Add a new object: Use .push() to append to the end.
+
+users.push({ id: 4, name: "Alex", age: 25, isActive: true });
+
+<b>3. Essential Array Methods</b>
+
+JavaScript provides powerful built-in methods designed to search, filter, and transform arrays of objects without manual for loops.
+
+<b>🔍 Searching & Filtering</b>
+
+<b>• .filter():</b> Returns a new array containing all objects matching a condition.
+
+const activeUsers = users.filter(user => user.isActive);
+
+// Returns Sarah and Lena's objects
+
+<b>.find():</b> Returns only the first object that meets a condition.
+
+const james = users.find(user => user.name === "James");
+
+// Returns { id: 2, name: "James", age: 31, isActive: false }
+
+<b>🛠️ Transforming Data</b>
+<b>• .map():</b> Creates a new array by extracting or transforming properties from each object.
+
+const namesOnly = users.map(user => user.name);
+
+// Returns ["Sarah", "James", "Lena"]
+
+<b>.reduce():</b> Condenses the array into a single value (like a sum, average, or unified object).
+
+const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+// Returns 80
+
+<b>🔄 Iterating & Sorting</b>
+
+<b>• .forEach():</b> Loops through every object to perform actions (like logging or updating UI).
+
+users.forEach(user => console.log(`${user.name} is ${user.age} years old.`));
+
+<b>• .sort():</b> Sorts the objects based on a property comparison.
+
+// Sort users by age (youngest to oldest)
+
+users.sort((a, b) => a.age - b.age);
+
+<b>⚠️ Common Mistake to Avoid</b>
+
+Do not use direct equality comparisons (===) on objects.
+In JavaScript, objects are compared by memory reference, not by value.
+
+// ❌ This will return undefined even if the user exists
+const found = users.find(user => user === { id: 1, name: "Sarah", age: 22, isActive: true });
+
+//  This works perfectly
+const foundCorrectly = users.find(user => user.id === 1);
     </pre>
 
-    <br><br>
+    <br>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank">MDN Web Docs-Rest parameters</a></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">MDN Web Docs-Array</a></p>
 
-    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-rest-operator/" target="_blank">Geeks for Geeks-JavaScript Rest parameter</a></p>
+    <p><a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank">W3Schools - JavaScript Arrays</a></p>
    
-    <p><a href="https://www.geeksforgeeks.org/javascript/what-is-the-rest-parameter-and-spread-operator-in-javascript/" target="_blank">Geeks for Geeks-Rest Parameter And Spread Operator in JavaScript</b></a></p>
+    <p><a href="https://www.geeksforgeeks.org/javascript/javascript-arrays/" target="_blank">Geeks for Geeks - JavaScript Arrays</b></a></p>
 
-    <p><a href="https://www.telerik.com/blogs/rest-spread-operators-explained-javascript" target="_blank">Telerik.Com - Rest and Spread Operators Explained in JavaScript</a></p>
+    <p><a href="https://daily.dev/blog/create-array-of-objects-javascript-a-beginners-guide/" target="_blank">Daily Dev - Create Array of Objects JavaScript: A Beginner's Guide</a></p>
 
-    <p><a href="https://www.geekster.in/articles/rest-operator-in-js/" target="_blank">Geekster - Rest Operator In JS</a></p>
-
-    <p><a href="https://www.freecodecamp.org/news/javascript-rest-vs-spread-operators/" target="_blank">Free Code Camp - JavaScript Rest vs Spread Operator – What’s the Difference?</p>
+    <p><a href="https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-create-update-and-loop-through-objects-using-js-array-methods/" target="_blank">Free Code Camp - JavaScript Array of Objects Tutorial – How to Create, Update, and Loop Through Objects Using JS Array Methods</p>
       
-    <p><a href="https://www.scaler.com/topics/rest-operator-in-javascript/" target="_blank">Scaler Topics-What is the Rest Operator in Javascript?</a></p>
-
-    <br><br>
+    <p><a href="https://dev.to/srishtikprasad/arrays-and-objects-in-javasript-js1-4n60" target="_blank">Dev Community - Arrays and Objects in JavaScript</a></p>
+    <br>
 
     <script src="index.js"></script>
   </body>

@@ -9,7 +9,8 @@
     <h1>Nested Objects</h1>
 
     <pre>
-       Nested objects in JavaScript are simply objects contained within other objects. They allow you to build complex data structures, group related data logically, and represent real-world hierarchies like user profiles, product catalogs, or API responses.
+       Nested objects in JavaScript are simply objects contained within other objects. 
+       They allow you to build complex data structures, group related data logically, and represent real-world hierarchies like user profiles, product catalogs, or API responses.
 
        
 1. Creating a Nested Object
@@ -70,7 +71,9 @@ user.address.coordinates = {
 
 4. Cloning & the Deep Copy Gotcha
 
-A common pitfall with nested objects is shallow copying. Built-in mechanisms like the spread operator (...) or Object.assign() only copy the first level of data. If you change a nested object in the copy, it will modify the original object as well.
+A common pitfall with nested objects is shallow copying. 
+Built-in mechanisms like the spread operator (...) or Object.assign() only copy the first level of data. 
+If you change a nested object in the copy, it will modify the original object as well.
 
 // ❌ Shallow copy pitfall
 const shallowCopy = { ...user };
@@ -82,8 +85,7 @@ const deepCopy1 = structuredClone(user); // Native modern JS method
 const deepCopy2 = JSON.parse(JSON.stringify(user)); // Older legacy alternative
 
 
-
-    </pre>
+   </pre>
 
     <br><br>
 
