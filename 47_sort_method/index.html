@@ -9,7 +9,68 @@
     <h1>Sort() Method</h1>
 
     <pre>
-       
+      JavaScript provides two primary built-in array methods for sorting: 
+      <b>Array.prototype.sort()</b> (which modifies the array in place) and 
+      <b>Array.prototype.toSorted()</b> (which returns a new sorted copy).
+      
+      By default, both methods convert elements into strings and sort them in ascending order based on their UTF-16 code unit values. 
+
+
+Core Built-in Methods
+
+
+Method	                      Mutates Original?	      Return Value	                          Introduced
+array.sort(compareFn)	         Yes (in place)	      Reference to the original sorted array	  ES1 (1997)
+array.toSorted(compareFn)	     No	              A brand-new shallow-copied sorted array	  ES2023
+
+(Note: Related ordering methods include reverse() and toReversed(), which reverse array elements in place or return a reversed copy, respectively.)
+
+
+<b>Common Sorting Patterns</b>
+
+<b>• Sorting Strings (Default).</b> Calling .sort() without arguments works well for basic English alphabetical strings.
+
+const fruits = ["banana", "apple", "cherry"];
+fruits.sort(); // ['apple', 'banana', 'cherry']
+
+<b>Sorting Non-ASCII / Accented Strings.</b> Use String.prototype.localeCompare() inside a compare function so accented or language-specific characters sort accurately.
+
+const items = ["réservé", "premier", "café", "adieu"];
+items.sort((a, b) => a.localeCompare(b)); // ['adieu', 'café', 'premier', 'réservé']
+
+<b>Sorting Numbers.</b> Because default sorting treats numbers as strings ("100" comes before "20"), you must pass a numeric compare function.
+
+const numbers = [100, 20, 5, 42];
+numbers.sort((a, b) => a - b); // Ascending: [5, 20, 42, 100]
+numbers.sort((a, b) => b - a); // Descending: [100, 42, 20, 5]
+
+<b>Sorting Arrays of Objects.</b> Access the target property inside the compare function to sort objects by numbers or strings.
+
+const users = [
+  { name: "John", age: 30 },
+  { name: "Alice", age: 25 }
+];
+
+// Sort by numeric property
+users.sort((a, b) => a.age - b.age);
+
+// Sort by string property
+users.sort((a, b) => a.name.localeCompare(b.name));
+
+<b>Non-Mutating Sort (toSorted).</b> Use toSorted() when working with state (such as in React) where you want to avoid mutating the original array.
+
+const original = [3, 1, 2];
+const sortedCopy = original.toSorted((a, b) => a - b);
+// original is still [3, 1, 2]; sortedCopy is [1, 2, 3]
+
+
+<b>Key Behaviors to Remember</b>
+
+<b>• Compare Function Logic.</b> A compare function (a, b) must return a negative number if a should come before b, a positive number if b should come before a, and 0 if their relative order should stay the same.
+<b>• Sort Stability.</b> Since ES2019, JavaScript guarantees a stable sort, meaning elements with equal sorting values preserve their original relative order.
+<b>• Undefined and Sparse Arrays.</b> Any undefined elements and empty array slots are automatically moved to the end of the array without calling the compare function.
+
+
     </pre>
 
     <br><br>
